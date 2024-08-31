@@ -403,7 +403,12 @@ width: 65%;
     .nav {
       display: none;
     }
-    
+    .contact-section{
+      display: block;
+    }
+    .content-2{
+      width: auto;
+    }
     .menu-button {
       display: block;
     }
