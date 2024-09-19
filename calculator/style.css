@@ -1,0 +1,88 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius:25px; 
+    overflow: hidden;
+    max-width: 300px;
+}
+.calculator {
+    width: 100%;
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.25rem; /* Title font size */
+    font-weight: 600; /* Title font weight */
+    color: white; /* Title color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.display {
+    font-size: 2rem; /* Display font size */
+    font-weight: bold; /* Display font weight */
+    color: #888888; /* Display text color */
+    text-align: right;
+    padding: 10px;
+    background-color: #082234; /* Input background color */
+}
+.expression {
+    margin-top: 10px;
+    font-size: 1rem; /* Expression font size */
+    color: white; /* Expression color */
+    text-align: right;
+    margin-bottom: 20px;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #0b2741;
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+.button.operator {
+    background-color: transparent;
+    color: #32a6a2; /* Operator button text color */
+}
+.button.number {
+    background-color: transparent;
+    color: white; /* Number button background color */
+  /* Number button text color */
+}
+.button.double {
+    grid-column: span 2;
+}
+.button.clear {
+    color: red;
+}
+.button.equals {
+    background-color: #32a6a2; /* Equals button background color */
+    color: #ffffff; /* Equals button text color */
+}
+
