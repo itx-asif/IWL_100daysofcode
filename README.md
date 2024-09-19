@@ -14,6 +14,12 @@ The first project is a Personal Portfolio Template. This milestone project showc
 The second project is a Blog Website. This project demonstrates my ability to create a structured, content-focused site. You can view and explore the code for this project below:
 
 - **Project:** [Blog Website](https://itx-asif.github.io/IWL_100daysofcode/bloggy/)
-- **Description:** A simple yet elegant blog website created with HTML and CSS. It includes features such as a homepage with a blog post overview, a post pages, and and a about page. The design focuses on readability and user experience, making it easy to browse and interact with the content.
+- **Description:** A simple yet elegant blog website created with HTML and CSS. It includes features such as a homepage with a blog post overview, post pages, and an about page. The design focuses on readability and user experience, making it easy to browse and interact with the content.
+
+### 3. Calculator App
+The third project is a Calculator App. This project reinforces my web development skills while creating a practical tool. You can view and explore the code for this project below:
+
+- **Project:** [Calculator App](https://itx-asif.github.io/IWL_100daysofcode/calculator/)
+- **Description:** A basic calculator built using HTML, CSS, and JavaScript. It features addition, subtraction, multiplication, division, and modulo operations, along with a clean user interface, clear input functionality, and keyboard support for efficiency.
 
 Feel free to explore the projects and provide feedback or suggestions!
