@@ -22,4 +22,15 @@ The third project is a Calculator App. This project reinforces my web developmen
 - **Project:** [Calculator App](https://itx-asif.github.io/IWL_100daysofcode/calculator/)
 - **Description:** A basic calculator built using HTML, CSS, and JavaScript. It features addition, subtraction, multiplication, division, and modulo operations, along with a clean user interface, clear input functionality, and keyboard support for efficiency.
 
+### 4. Interactive Quiz App
+The fourth project is an Interactive Quiz App. This engaging application tests users' knowledge with multiple-choice questions and provides immediate feedback. You can view and explore the code for this project below:
+
+- **Project:** [Interactive Quiz App](https://itx-asif.github.io/IWL_100daysofcode/quiz/)
+- **Description:** An interactive quiz app that displays one question at a time and allows users to select their answers. It includes a scoring system that tracks progress and provides feedback after each question, enhancing the learning experience.
+
+## 🤝 Contributing
 Feel free to explore the projects and provide feedback or suggestions!
+
+## 📅 Challenge Duration
+This challenge consists of 20 projects completed over 100 days, focusing on improving my coding skills and building a diverse portfolio.
+
