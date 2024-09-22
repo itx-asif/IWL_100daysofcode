@@ -1,0 +1,120 @@
+
+:root{
+    --primary-color:#cd8c8b;
+    --secondary-color:#f8efef;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8efef;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 -10%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#app {
+    border-radius: 12px;
+    padding: 20px;
+   justify-content: center;
+display: flex;
+flex-direction: column;
+width: 90%;
+background-color: transparent;
+    text-align: center;
+}
+#question-container{
+    padding: 0 10%;
+}
+button{
+    text-align: start;
+}
+.quiz-title {
+    color: black;
+    font-size: xx-large;
+  
+}
+.progress-bar {
+    width: 100%;
+    background-color: var(--secondary-color); /* Light grey background */
+    border-radius: 5px;
+    height: 20px;
+    border: solid 2px brown;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Spacing between bar and question */
+}
+
+.progress {
+    height: 100%;
+    width: 0; /* Initial width */
+    background-color: var(--primary-color); /* Color for progress */
+ 
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+.hidden {
+    display: none;
+}
+#question{
+    text-align: start;
+    font-weight: bold;
+    font-size: x-large;
+}
+#options{
+    display: flex;
+flex-direction: column;
+margin-top: 40px;
+}
+#options>button{
+   padding: 0 !important;
+display: flex;
+align-items: stretch;
+overflow-x: hidden;
+background-color: white;
+color: #000;
+
+
+}
+#options>button>.Option-name{
+    font-size: medium;
+    font-weight: bold;
+display: flex;
+align-items: center;
+    background-color: var(--primary-color);
+    padding-left: 10px;
+    padding-right: 10px;
+  
+}
+#options>button>.option-text{
+    margin-left: 10px;
+ 
+}
+@media (max-width: 400px) {
+   .header{
+    flex-direction: column;
+   }
+  }

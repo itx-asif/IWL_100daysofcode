@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1 id="quiz-title" class="quiz-title">Quiz Application</h1>
+            <div  id="questions" class="hidden">
+                <h2>Question <span id="current-question">1</span>/<span id="total-question">6</span></h2>
+                <div id="progress-bar" class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+        </header>
+       
+        <div id="selection-container" class="selection-container">
+            <h2>Select a Quiz Topic</h2>
+            <button class="quiz-button" id="react-quiz">React</button>
+            <button class="quiz-button" id="javascript-quiz">JavaScript</button>
+            <button class="quiz-button" id="php-quiz">PHP</button>
+        </div>
+        <div id="question-container" class="question-container hidden">
+            <div id="question"></div>
+            <div id="options"></div>
+        </div>
+        <div id="results-container" class="results-container hidden">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button id="restart-button">Restart</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
