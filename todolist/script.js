@@ -13,7 +13,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const datetime = document.getElementById('datetime').value;
-    
+
     if (title && description && datetime) {
         if (this.dataset.editing) {
             updateTask(this.dataset.editing, title, description, datetime);
@@ -34,7 +34,10 @@ function addTask(title, description, datetime) {
 function createTaskElement(title, description, datetime) {
     const newItem = document.createElement('div');
     newItem.className = 'task-card';
+    const timeLeftElement = document.createElement('span');
+    timeLeftElement.className = 'time-left';
     const timeLeft = calculateTimeLeft(datetime);
+
     newItem.innerHTML = `
         <button class="remove-task">&times;</button>
         <h3>${title}</h3>
@@ -44,14 +47,22 @@ function createTaskElement(title, description, datetime) {
         <button class="complete-task">Mark as Complete</button>
     `;
 
-    // Change background color if time is up
-    if (timeLeft.includes('Time is up!')) {
-        newItem.classList.add('red');
-    }
+    // Update time left every second
+    const intervalId = setInterval(() => {
+        const timeLeft = calculateTimeLeft(datetime);
+        newItem.querySelector('.time-left').textContent = timeLeft;
+
+        // Change color if time is up
+        if (timeLeft.includes('Time is up!')) {
+            newItem.classList.add('red');
+            clearInterval(intervalId); // Stop the interval when time is up
+        }
+    }, 1000);
 
     newItem.querySelector('.remove-task').addEventListener('click', function() {
         newItem.remove();
         removeTaskFromLocalStorage(title);
+        clearInterval(intervalId); // Clear the interval when the task is removed
     });
 
     newItem.querySelector('.edit-task').addEventListener('click', function() {
@@ -59,8 +70,12 @@ function createTaskElement(title, description, datetime) {
     });
 
     newItem.querySelector('.complete-task').addEventListener('click', function() {
-        newItem.classList.toggle('completed');
-        newItem.querySelector('.time-left').textContent = newItem.classList.contains('completed') ? 'Completed' : timeLeft;
+        const isCompleted = newItem.classList.toggle('completed');
+        newItem.style.backgroundColor = isCompleted ? 'lightgreen' : '';
+        newItem.querySelector('.time-left').textContent = isCompleted ? 'Completed' : timeLeft;
+
+        // Update task status in local storage
+        updateTaskInLocalStorage(title, isCompleted);
     });
 
     return newItem;
@@ -73,24 +88,35 @@ function openEditModal(title, description, datetime, taskElement) {
     document.getElementById('myModal').style.display = 'flex';
     
     // Set form for editing
-    document.querySelector('form').dataset.editing = taskElement.innerText; // Save title as reference for editing
+    document.querySelector('form').dataset.editing = title; // Save title as reference for editing
 }
 
 function updateTask(oldTitle, newTitle, newDescription, newDatetime) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const taskIndex = tasks.findIndex(task => task.title === oldTitle);
-    
+
     if (taskIndex !== -1) {
+        // Update task details
         tasks[taskIndex] = { title: newTitle, description: newDescription, datetime: newDatetime };
         localStorage.setItem('tasks', JSON.stringify(tasks));
-        
-        // Update the displayed task
-        const taskElement = document.querySelector(`.task-card:contains('${oldTitle}')`);
-        if (taskElement) {
-            taskElement.querySelector('h3').textContent = newTitle;
-            taskElement.querySelector('p').textContent = newDescription;
-            taskElement.querySelector('.time-left').textContent = calculateTimeLeft(newDatetime);
-        }
+
+        // Refresh task display
+        refreshTasks();
+    }
+}
+
+function refreshTasks() {
+    document.querySelector('main').innerHTML = ''; // Clear existing tasks
+    loadTasks(); // Load updated tasks from local storage
+}
+
+function updateTaskInLocalStorage(title, isCompleted) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const taskIndex = tasks.findIndex(task => task.title === title);
+    
+    if (taskIndex !== -1) {
+        tasks[taskIndex].completed = isCompleted;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
 
@@ -112,6 +138,11 @@ function loadTasks() {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(task => {
         const newItem = createTaskElement(task.title, task.description, task.datetime);
+        if (task.completed) {
+            newItem.classList.add('completed');
+            newItem.style.backgroundColor = 'lightgreen';
+            newItem.querySelector('.time-left').textContent = 'Completed';
+        }
         document.querySelector('main').appendChild(newItem);
     });
 }
