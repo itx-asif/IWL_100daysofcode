@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background-repeat: no-repeat; background-size: cover;" class="md:overflow-hidden md:h-screen h-max max-w-dvh">
+  <header class="bg-transparent text-foreground p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <span class="text-xl font-semibold text-white">Weather APP</span>
+    </div>
+    <form id="searchform" class="relative">
+      <input type="text" placeholder="Search..." id="input" class="bg-input text-foreground border border-border rounded-full py-2 px-4 w-64 focus:outline-none focus:ring-2 focus:ring-primary" />
+      <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-primary-foreground p-2 rounded-full hover:bg-primary/80">
+        <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/16x16.svg?text=🔍" />
+      </button>
+    </form>
+  </header>
+  <div class="md:flex justify-around px-8  md:px-0  pt-4 md:mt-[-70px]   items-center " style="width: -webkit-fill-available; height: -webkit-fill-available   ;">
+    <div>
+      <h1 class="text-4xl font-bold text-center mb-6" id="city-name">Chicago</h1>
+      <p class="text-center  mb-4" id="date-time">Wednesday, 6 September 11:00 PM</p>
+      
+      <div class="text-center my-4">
+        <span style="font-size: 8rem;" class=" text-white" id="temperature">25°C</span>
+        <p class="text-lg" id="weather-condition">Snow</p>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-2 gap-6">
+      <div class="bg-card p-4 rounded-lg text-center transition-transform hover:scale-105">
+        <h2 class="text-lg font-semibold">Visibility</h2>
+        <p class="text-3xl font-bold" id="visibility">km</p>
+      </div>
+      <div class="bg-card p-4 rounded-lg text-center transition-transform hover:scale-105">
+        <h2 class="text-lg font-semibold">Wind Speed</h2>
+        <p class="text-3xl font-bold" id="wind-speed">15 km/h</p>
+      </div>
+      <div class="bg-card p-4 rounded-lg text-center transition-transform hover:scale-105">
+        <h2 class="text-lg font-semibold">Humidity</h2>
+        <p class="text-3xl font-bold" id="humidity">60%</p>
+      </div>
+      <div class="bg-card p-4 rounded-lg text-center transition-transform hover:scale-105">
+        <h2 class="text-lg font-semibold">Pressure</h2>
+        <p class="text-3xl font-bold" id="pressure">1013 hPa</p>
+      </div> 
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

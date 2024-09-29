@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  width: 100dvw;
+
+}
+
+.bg-card {
+  background-color: #ffffff; /* White background for cards */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.bg-card:hover {
+  transform: scale(1.05);
+}
+
+.text-muted-foreground {
+  color: #6b7280; /* Gray for muted text */
+}
+
+.max-w-md {
+  max-width: 600px; /* Customize max width */
+}
+
+.p-4 {
+  padding: 16px; /* Customize padding */
+}
+
+.rounded-lg {
+  border-radius: 8px; /* Customize rounded corners */
+}
