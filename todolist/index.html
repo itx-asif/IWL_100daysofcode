@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1 class="logp">Task Manager</h1>
+        <button id="openModal" class="btn-primary">Add Task</button>
+    </header>
+    
+    <div>
+        <main></main>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="flex-between">
+                <h2 id="modalTitle">Add New Item</h2>
+                <button id="closeModal">&times;</button>
+            </div>
+            <form id="taskForm">
+                <label for="title">Title (max 50 characters)</label>
+                <input type="text" id="title" maxlength="50" required />
+
+                <label for="description">Description (max 200 characters)</label>
+                <textarea id="description" maxlength="200" required></textarea>
+
+                <label for="datetime">Date & Time</label>
+                <input type="datetime-local" id="datetime" required />
+
+                <div>
+                    <button type="button" id="closeModalBottom" class="btn-secondary">Close</button>
+                    <button type="submit" class="btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 <a href="https://developedbyasif.netlify.app/" style="color: white; text-decoration: underline;">developedbyasif</a>. All rights reserved.</p>
+    </footer>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -24,6 +24,10 @@ Welcome to my repository for the 100 Days of Code Challenge hosted by Innovate W
 - **Project:** [Weather App](https://itx-asif.github.io/IWL_100daysofcode/weather/)
 - **Description:** A responsive weather application built with HTML, CSS, and JavaScript. It allows users to search for weather information based on city names. The app displays current weather conditions, including temperature, visibility, wind speed, humidity, and pressure, along with dynamic background images based on weather conditions.
 
+### 6. To-Do List Application
+- **Project:** [To-Do List App](https://itx-asif.github.io/IWL_100daysofcode/todo/)
+- **Description:** A simple To-Do List application created using HTML, CSS, and JavaScript. Users can add, edit, and delete tasks, as well as mark them as completed. The app uses local storage to persist tasks between sessions, ensuring that users don't lose their data.
+
 ## 🤝 Contributing
 Feel free to explore the projects and provide feedback or suggestions!
 
